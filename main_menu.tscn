@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://sprites/settings.svg" type="Texture" id=2]
+[ext_resource path="res://sprites/play.svg" type="Texture" id=3]
+[ext_resource path="res://sprites/menu_background.svg" type="Texture" id=4]
+[ext_resource path="res://fonts/font_lul.tres" type="DynamicFont" id=5]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=6]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource( 1 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="UI"]
+position = Vector2( 300, 512 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 4 )
+
+[node name="Settings" type="TextureButton" parent="UI"]
+margin_left = 295.702
+margin_top = 543.382
+margin_right = 483.702
+margin_bottom = 731.382
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TextureButton" parent="UI"]
+margin_left = 111.494
+margin_top = 325.218
+margin_right = 299.494
+margin_bottom = 513.218
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MadeBy" type="Label" parent="UI"]
+margin_left = 277.175
+margin_top = 762.114
+margin_right = 552.175
+margin_bottom = 876.114
+custom_fonts/font = ExtResource( 5 )
+text = "Made by iLunaiLuna
+(tg/itch.io)
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="UI"]
+margin_left = 227.283
+margin_top = 154.841
+margin_right = 381.283
+margin_bottom = 190.841
+custom_fonts/font = ExtResource( 5 )
+text = "Doodle Fall"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BestScore" type="Label" parent="UI"]
+visible = false
+margin_left = 234.0
+margin_top = 902.0
+margin_right = 385.0
+margin_bottom = 938.0
+custom_fonts/font = ExtResource( 5 )
+text = "Best: score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="pressed" from="UI/Settings" to="." method="settings_pressed"]
+[connection signal="pressed" from="UI/Play" to="." method="play_pressed"]
