@@ -10,3 +10,6 @@ Pink platforms are your frends, remember that.
 
 # Platforms:
 Any you would build on (Godot Engine)
+
+# P.S:
+Idk why structure was deleted.
